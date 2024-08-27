@@ -12,7 +12,7 @@ public class MoveToGoalAgent : Agent {
     [SerializeField] private Material loseMaterial;
     [SerializeField] private MeshRenderer floorMeshRenderer;
 
-
+/*
 public override void OnEpisodeBegin()
 {
     // Set the agent's position to the center of a specific cube in the grid
@@ -24,6 +24,11 @@ public override void OnEpisodeBegin()
     // Set the agent's position to the center of the grid
     transform.localPosition = new Vector3(gridCenterX, 0.5f, gridCenterZ);
 }
+*/
+    public override void OnEpisodeBegin() {
+        transform.localPosition = new Vector3(Random.Range(-3f, +1f), 0, Random.Range(-2f, 2f));
+        targetTransform.localPosition = new Vector3(Random.Range(2.4f, +5f), 0, Random.Range(-2f, 2f));
+    }
 
 
     public override void CollectObservations(VectorSensor sensor) {
